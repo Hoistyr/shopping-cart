@@ -1,0 +1,1 @@
+Shopping cart app made while learning from The Odin Project
