@@ -16,6 +16,7 @@ import brick14 from '../images/bricks/brick14.jpeg';
 import AddToCart from './AddToCart';
 
 const Products = (props) => {
+  console.log('Products passBrickObjs: ', props.passBrickObjs);
   const brickSrc = [
     {brick1}, {brick2}, {brick3}, {brick4}, {brick5}, {brick6}, {brick7}, {brick8}, {brick9}, {brick10}, {brick11}, {brick12}, {brick13}, {brick14},
   ];
@@ -36,11 +37,11 @@ const Products = (props) => {
 
     return returnObj;
   });
-  
 
+  let cartBrickObjs = brickObjs;
   if (props.passBrickObjs.length !== 0) {
-    console.log('bricks passed');
-    console.log('products passBrickObjs: ', props.passBrickObjs);
+    console.log('passBricksObjs exists');
+    cartBrickObjs = props.passBrickObjs;
   }
 
   const brickDivs = brickSrc.map((link) => {
@@ -49,8 +50,7 @@ const Products = (props) => {
       brickName = prop;
     };
 
-
-    const returnImg =
+    const returnDiv =
     <div className="productCard" key={brickName}>
       <img
         src={link[brickName]}
@@ -59,12 +59,12 @@ const Products = (props) => {
       />
       <AddToCart 
         addToCart={props.addToCart} 
-        brickObjs={brickObjs} 
+        brickObjs={cartBrickObjs} 
         brickName={brickName}
       />
     </div>
     
-    return returnImg;
+    return returnDiv;
   });
 
   brickObjs = brickObjs.map((obj) => {
@@ -76,8 +76,6 @@ const Products = (props) => {
 
     return obj;
   });
-
-  // setStateBrickObj(brickObjs);
   
   return (
     <div className="products">

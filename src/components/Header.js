@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import shoppingCart from '../images/icons/shoppingCart.svg';
+import Shop from './Shop';
 
 const Header = (props) => {
   const [cartCount, setCartCount] = useState(0);
-  
-  console.log('header props ', props);
-  
-  if (props.cartCount !== '' && props.cartCount !== 0 && props.cartCount !== cartCount) {
-    console.log('updating cart count state');
+  if (props.cartCount !== cartCount) {
     setCartCount(props.cartCount);
   }
-
+  
   let amountText = '';
   if (cartCount > 0) {
-    console.log('Header cartcount: ', cartCount);
     amountText = <p className="cartCountText">{cartCount}</p>;
   }
   
@@ -35,6 +31,7 @@ const Header = (props) => {
               src={shoppingCart}
               alt="Shopping Cart" 
             />
+            
           </Link>
           {amountText}
         </li>
