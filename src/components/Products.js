@@ -16,7 +16,6 @@ import brick14 from '../images/bricks/brick14.jpeg';
 import AddToCart from './AddToCart';
 
 const Products = (props) => {
-  console.log('Products passBrickObjs: ', props.passBrickObjs);
   const brickSrc = [
     {brick1}, {brick2}, {brick3}, {brick4}, {brick5}, {brick6}, {brick7}, {brick8}, {brick9}, {brick10}, {brick11}, {brick12}, {brick13}, {brick14},
   ];
@@ -40,7 +39,6 @@ const Products = (props) => {
 
   let cartBrickObjs = brickObjs;
   if (props.passBrickObjs.length !== 0) {
-    console.log('passBricksObjs exists');
     cartBrickObjs = props.passBrickObjs;
   }
 

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Products from './Products';
 
 const Shop = (props) => {
-  console.log(props.test, props);
 
   return (
     <div className="page">

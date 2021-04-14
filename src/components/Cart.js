@@ -21,7 +21,6 @@ const Cart = (props) => {
   }
 
   const cartBrickDivs = props.cartItems.map((item) => {
-    console.log('Cart item: ', item);
     const itemName = item.name;
     const returnDiv =
     <div className="cartProduct" key={item.name}>
@@ -100,10 +99,7 @@ const Cart = (props) => {
     />
   </div>;
   
-  
-  
   let purBtn = '';
-  console.log(props.cartItems);
   if (props.cartItems.length > 0) {
     cartContent = cartBrickDivs;
     purBtn = <button className="purchaseButton">Begin Purchase</button>

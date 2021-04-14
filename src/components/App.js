@@ -15,8 +15,6 @@ const App = () => {
     // product should be an object
     setBrickObjs(brickObjs);
     const brickClicked =  event.target.attributes.brickid.value;
-    console.log('click registered');
-    console.log(event.target.parentNode);
     const amountAdded = event.target.parentNode.querySelector('.itemAmountInput').value;
     
     const updateBrickObjs = brickObjs.map((obj) => {
@@ -39,7 +37,6 @@ const App = () => {
   }
 
   const updateCart = (itemName, event) => {
-    console.log('update clicked');
     const updatedAmount = event.target.parentNode.querySelector('.itemAmountInput').value;
     
     const updateBrickObjs = brickObjs.map((obj) => {
@@ -61,7 +58,6 @@ const App = () => {
   }
 
   const removeFromCart = (itemName, event) => {
-    console.log('remove');
     const updateBrickObjs = brickObjs.map((obj) => {
       if (obj.name === itemName) {
         obj.inCart = false;
@@ -80,8 +76,7 @@ const App = () => {
     setCartCount(itemsInCart.length);
     setCartItems(itemsInCart);
   }
-
-  console.log('App objs: ', brickObjs);
+  
   return (
     <BrowserRouter>
       <Header cartCount={cartCount}/>

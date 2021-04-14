@@ -1,18 +1,28 @@
-body {
+html, body {
   margin: 0px;
   padding: 0px;
   color: white;
   font-family: 'Poppins', sans-serif;
+  height: 100%;
+}
+
+#root {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
 }
 
 .header {
-  position: sticky;
+  position: fixed;
+  top: 0px;
+  width: 100%;
   background-color: #39b878;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 5px 20px 0px rgba(128, 128, 128, 0.678);
+  z-index: 100;
 }
 
 .headerTitle {
@@ -63,6 +73,11 @@ body {
 a {
   text-decoration: none;
   color: white;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
 }
 
 .shopTitle {
@@ -176,7 +191,7 @@ input[type=number] {
 
 .cartTitle {
   color: #39b878;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .purchaseButton {
@@ -205,6 +220,8 @@ input[type=number] {
   padding-left: 60px;
   padding-right: 60px;
   position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .cartProductName {
@@ -253,7 +270,6 @@ input[type=number] {
   background-color: transparent;
 }
 
-
 .deleteCartItemIcon {
   height: 30px;
   width: auto;
@@ -274,4 +290,36 @@ input[type=number] {
 .emptyCartTitle {
   color: #b3b3b3b7;
   font-size: 3rem;
+}
+
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.homePageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: rgba(128, 128, 128, 0.384);
+  font-size: 6rem;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+}
+
+.homeBricks {
+  position: absolute;
+  height: 75%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  margin: auto;
+  top: 0; bottom: 0;
+  z-index: 1;
 }
