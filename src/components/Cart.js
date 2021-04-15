@@ -99,11 +99,14 @@ const Cart = (props) => {
     />
   </div>;
   
+  console.log('prebutton');
   let purBtn = '';
   if (props.cartItems.length > 0) {
     cartContent = cartBrickDivs;
-    purBtn = <button className="purchaseButton">Begin Purchase</button>
+    purBtn = <button className="purchaseButton">Begin Purchase</button>;
   }
+
+  console.log(purBtn);
 
   return (
     <div className="page">
